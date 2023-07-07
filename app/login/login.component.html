@@ -1,0 +1,30 @@
+<div class="container login-form">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+                        <article>
+                <h4>Login</h4>
+                
+                <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data" [formGroup]="formGroup" (ngSubmit)="loginProcess()">
+                    <div class="bs-callout bs-callout-danger errorr">
+                        <!-- <p class="text-danger alert-danger">Please Enter <span class="form_class">Email, Password.</span></p> -->
+                    </div>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
+                      </div>
+                      <input type="text" class="form-control" name="email" id="logemail" placeholder="Email ID" aria-describedby="basic-addon1" fdprocessedid="rjiguae" formControlName="username">
+                    </div>
+                    
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill"></i></span>
+                      </div>
+                      <input type="password" class="form-control" name="password" id="logpass" placeholder="Password" aria-describedby="basic-addon1" fdprocessedid="xgx0y" formControlName="password">
+                    </div>
+                    <button class="btn btn-secondary btn-lg btn-block" name="login_submit" onclick="return login()" type="submti"  fdprocessedid="w2wusa" >Login</button>
+                        <a href="https://www.aptimates.com/Forgot">Forgot Passowrd? </a>
+                </form>
+            </article>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<main id="main" class="main">
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <div class="AddEmployeeTitleContainer">
+                            <div class="addEmployeeTitleContainer">
+                                <div>Add Name</div>
+                            </div>
+                            <div class="addEmployeeBtnContainer">
+                                <div class="addNewEmployeeBtn" (click)="addNewEmployeeBtn()">+</div>
+                            </div>
+                        </div>
+
+                        <div *ngIf="newEmployeeClicked">
+                            <div class="formWrapper">
+                                <form>
+                                    <div class="form-group name">
+                                    
+                                        <input type="text" class="form-control input" id="name" name="name"
+                                            [(ngModel)]="model.name" placeholder="Name">
+                                    </div>
+
+                                    <div class="form-group position">
+
+                                    </div>
+                                    <div class="submitBtnContainer">
+                                        <button type="submit" class="saveBtn" (click)="addEmployee()">SAVE</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <a style="color:#FFFFFF;" class="btn m-b-xs w-xs btn-info"><input type="file" accept=".csv"
+                                (change)="handleFileSelect($event)"></a>
+                    </div>
+                    <table datatable class="row-border hover" [dtTrigger]="dtTrigger" [dtOptions]="dtOptions">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;">Name</th>
+                                <th style="text-align: center;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let post of getJsonValue">
+                                <td>{{ post.name}}</td>
+                                <td><button type="button" class="btn btn-info"><i
+                                            class="bi bi-pencil-square"></i>&nbsp;Edit</button>&nbsp;&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
